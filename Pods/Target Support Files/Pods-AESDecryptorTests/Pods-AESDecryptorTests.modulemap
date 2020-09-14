@@ -1,0 +1,6 @@
+framework module Pods_AESDecryptorTests {
+  umbrella header "Pods-AESDecryptorTests-umbrella.h"
+
+  export *
+  module * { export * }
+}
