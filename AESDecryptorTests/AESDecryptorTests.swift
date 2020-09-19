@@ -60,8 +60,6 @@ class AESDecryptorTests: XCTestCase {
         viewModel.cryption.value.key = "0p9o8i7u6y5t4r3e"
         viewModel.decrypt(cryption: &viewModel!.cryption.value)
         XCTAssertEqual(viewModel.cryption.value.plainText, "Hey man")
-
-        
     }
 
     func testDecryptCBC256() {
@@ -71,7 +69,6 @@ class AESDecryptorTests: XCTestCase {
         viewModel.cryption.value.key = "0p9o8i7u6y5t4r3e0p9o8i7u6y5t4r3e"
         viewModel.decrypt(cryption: &viewModel!.cryption.value)
         XCTAssertEqual(viewModel.cryption.value.plainText, "Hey man")
-
     }
 
     func testDecryptECB128() {
@@ -81,7 +78,6 @@ class AESDecryptorTests: XCTestCase {
         viewModel.cryption.value.key = "0p9o8i7u6y5t4r3e"
         viewModel.decrypt(cryption: &viewModel!.cryption.value)
         XCTAssertEqual(viewModel.cryption.value.plainText, "Hey man")
-
     }
     
     func testDecryptECB256() {
