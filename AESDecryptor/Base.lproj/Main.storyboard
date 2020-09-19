@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,16 +10,149 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="AESDecryptor" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fWt-Sg-UVf" customClass="DecryptionView" customModule="AESDecryptor" customModuleProvider="target">
+                                <rect key="frame" x="10" y="54" width="394" height="832"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="2zf-JV-hvU">
+                                        <rect key="frame" x="8" y="8" width="378" height="391.66666666666669"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter link of text file contain encrypted data, then select download to fetch its data." lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="7om-VM-U4c">
+                                                <rect key="frame" x="0.0" y="0.0" width="378" height="20.333333333333332"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="URL" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3X8-4H-CS4">
+                                                <rect key="frame" x="0.0" y="25.333333333333329" width="378" height="34"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JLZ-UB-8XU">
+                                                <rect key="frame" x="0.0" y="64.333333333333329" width="378" height="30"/>
+                                                <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                                <state key="normal" title="Download">
+                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="downloadEncryptContentSelected:" destination="fWt-Sg-UVf" eventType="touchUpInside" id="tNJ-B7-lUN"/>
+                                                </connections>
+                                            </button>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Result of Download" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="4vD-Tl-Od1">
+                                                <rect key="frame" x="0.0" y="99.333333333333343" width="378" height="50"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="fYD-CH-Xf4"/>
+                                                </constraints>
+                                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                            </textView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Encryption Mode:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fRL-J7-frO">
+                                                <rect key="frame" x="0.0" y="154.33333333333334" width="378" height="15.666666666666657"/>
+                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="13"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="xdk-q1-C7I">
+                                                <rect key="frame" x="0.0" y="175" width="378" height="32"/>
+                                                <segments>
+                                                    <segment title="CBC"/>
+                                                    <segment title="ECB"/>
+                                                </segments>
+                                                <connections>
+                                                    <action selector="modeValueChanged:" destination="fBf-EA-WDg" eventType="valueChanged" id="b3T-m1-OWF"/>
+                                                </connections>
+                                            </segmentedControl>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Secret Key Size" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eRr-A8-bLp">
+                                                <rect key="frame" x="0.0" y="211" width="378" height="15.666666666666657"/>
+                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="13"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="F2Q-Dy-Aj3">
+                                                <rect key="frame" x="0.0" y="231.66666666666669" width="378" height="32"/>
+                                                <segments>
+                                                    <segment title="128"/>
+                                                    <segment title="256"/>
+                                                </segments>
+                                                <connections>
+                                                    <action selector="sizeValueChanged:" destination="fBf-EA-WDg" eventType="touchUpInside" id="ekY-iA-mPU"/>
+                                                </connections>
+                                            </segmentedControl>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Secret Key" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kbH-tn-Gen">
+                                                <rect key="frame" x="0.0" y="267.66666666666669" width="378" height="34"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eV3-r9-zld">
+                                                <rect key="frame" x="0.0" y="306.66666666666669" width="378" height="30"/>
+                                                <color key="backgroundColor" systemColor="systemPinkColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                                <state key="normal" title="Decrypt">
+                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="decryptContentSelected:" destination="fWt-Sg-UVf" eventType="touchUpInside" id="ngN-Y8-6gE"/>
+                                                </connections>
+                                            </button>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Result of encryption" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="xQX-ky-HGp">
+                                                <rect key="frame" x="0.0" y="341.66666666666669" width="378" height="50"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="lzY-9H-INt"/>
+                                                </constraints>
+                                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                            </textView>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="height" relation="lessThanOrEqual" constant="424" id="oto-EK-1c2"/>
+                                        </constraints>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="2zf-JV-hvU" secondAttribute="trailing" constant="8" id="AEO-jU-mKt"/>
+                                    <constraint firstAttribute="bottom" secondItem="2zf-JV-hvU" secondAttribute="bottom" priority="250" constant="380" id="UpX-pl-0ww"/>
+                                    <constraint firstItem="2zf-JV-hvU" firstAttribute="top" secondItem="fWt-Sg-UVf" secondAttribute="top" constant="8" id="UzB-17-A3j"/>
+                                    <constraint firstItem="2zf-JV-hvU" firstAttribute="leading" secondItem="fWt-Sg-UVf" secondAttribute="leading" constant="8" id="tuf-6O-K0o"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="decryptContent" destination="eV3-r9-zld" id="rKu-HK-GrD"/>
+                                    <outlet property="decryptionMode" destination="xdk-q1-C7I" id="R4K-Ep-q1e"/>
+                                    <outlet property="decryptionSize" destination="F2Q-Dy-Aj3" id="AoJ-ek-NT9"/>
+                                    <outlet property="downloadEncryptContent" destination="JLZ-UB-8XU" id="TLM-nM-6Gt"/>
+                                    <outlet property="encryptURL" destination="3X8-4H-CS4" id="Kdw-3d-cUf"/>
+                                    <outlet property="resultOfDownloadTextView" destination="4vD-Tl-Od1" id="Mbi-Gt-cc9"/>
+                                    <outlet property="resultOfEncryptionTextView" destination="xQX-ky-HGp" id="NCf-GW-LZb"/>
+                                    <outlet property="secretKey" destination="kbH-tn-Gen" id="0Ni-dw-bHQ"/>
+                                </connections>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="fWt-Sg-UVf" secondAttribute="trailing" constant="10" id="MLb-w4-5tM"/>
+                            <constraint firstItem="fWt-Sg-UVf" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="Smb-tk-7d8"/>
+                            <constraint firstItem="fWt-Sg-UVf" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="10" id="ewQ-7c-pZN"/>
+                            <constraint firstAttribute="bottom" secondItem="fWt-Sg-UVf" secondAttribute="bottom" constant="10" id="lcI-87-DM3"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="decryptionView" destination="fWt-Sg-UVf" id="JZp-XO-eYA"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <exit id="fBf-EA-WDg" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
+            <point key="canvasLocation" x="136.875" y="78.75"/>
         </scene>
     </scenes>
 </document>
