@@ -13,6 +13,7 @@
 		42533C50250B6BC700B7BB61 /* DecryptionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42533C4E250B6BC700B7BB61 /* DecryptionViewModel.swift */; };
 		42533C52250BC29B00B7BB61 /* DecryptionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42533C51250BC29B00B7BB61 /* DecryptionModel.swift */; };
 		42533C53250BC29B00B7BB61 /* DecryptionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42533C51250BC29B00B7BB61 /* DecryptionModel.swift */; };
+		428D114B2709AAA5004DD307 /* AESDecryptorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42979EE4250907F7007E1C54 /* AESDecryptorTests.swift */; };
 		42979ECE250907F4007E1C54 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42979ECD250907F4007E1C54 /* AppDelegate.swift */; };
 		42979ED0250907F4007E1C54 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42979ECF250907F4007E1C54 /* SceneDelegate.swift */; };
 		42979ED2250907F4007E1C54 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42979ED1250907F4007E1C54 /* ViewController.swift */; };
@@ -359,6 +360,7 @@
 			files = (
 				42533C4F250B6BC700B7BB61 /* DecryptionViewModel.swift in Sources */,
 				42979ED2250907F4007E1C54 /* ViewController.swift in Sources */,
+				428D114B2709AAA5004DD307 /* AESDecryptorTests.swift in Sources */,
 				42533C52250BC29B00B7BB61 /* DecryptionModel.swift in Sources */,
 				42B8B377250E804400BC602E /* Dynamic.swift in Sources */,
 				42979ECE250907F4007E1C54 /* AppDelegate.swift in Sources */,
